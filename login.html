@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aposte para o Bem — Entrar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Aposte<span> para o </span>Bem</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-item">Home</a></li>
+      <li><a href="sobre.html" class="nav-item">Sobre</a></li>
+      <li><a href="acoes.html" class="nav-item">Ações</a></li>
+      <li><a href="doar.html" class="nav-item">Doar</a></li>
+      <li><a href="contato.html" class="nav-item">Contato</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="login.html" class="nav-login" id="navAuth">Entrar</a>
+      <a href="doar.html" class="nav-donate">🤍 Doar agora</a>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <main class="content-wrapper">
+    <div class="section-header-aps">
+      <h2>Sua Conta</h2>
+      <p>Entre ou crie uma conta para acompanhar suas doações.</p>
+    </div>
+
+    <div class="auth-wrapper">
+      <div class="box-card auth-card">
+        <div class="auth-tabs">
+          <button type="button" class="filter-tab active" data-auth="login">Entrar</button>
+          <button type="button" class="filter-tab" data-auth="cadastro">Criar conta</button>
+        </div>
+
+        <form id="loginForm" class="auth-form">
+          <div class="form-group">
+            <label for="login-email">E-mail</label>
+            <input type="email" id="login-email" placeholder="nome@exemplo.com" autocomplete="email" required />
+          </div>
+          <div class="form-group">
+            <label for="login-senha">Senha</label>
+            <input type="password" id="login-senha" placeholder="Sua senha" autocomplete="current-password" required />
+          </div>
+          <p class="auth-msg" id="loginMsg" role="alert"></p>
+          <button type="submit" class="btn-primary btn-full">Entrar</button>
+          <p class="auth-troca">Ainda não tem conta? <a href="#" data-auth-link="cadastro">Cadastre-se</a></p>
+        </form>
+
+        <form id="cadastroForm" class="auth-form" style="display:none;">
+          <div class="form-group">
+            <label for="cad-nome">Nome completo</label>
+            <input type="text" id="cad-nome" placeholder="Seu nome" autocomplete="name" required />
+          </div>
+          <div class="form-group">
+            <label for="cad-email">E-mail</label>
+            <input type="email" id="cad-email" placeholder="nome@exemplo.com" autocomplete="email" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cad-senha">Senha</label>
+              <input type="password" id="cad-senha" placeholder="Mín. 6 caracteres" minlength="6" autocomplete="new-password" required />
+            </div>
+            <div class="form-group">
+              <label for="cad-senha2">Confirmar senha</label>
+              <input type="password" id="cad-senha2" placeholder="Repita a senha" minlength="6" autocomplete="new-password" required />
+            </div>
+          </div>
+          <p class="auth-msg" id="cadastroMsg" role="alert"></p>
+          <button type="submit" class="btn-primary btn-full">Criar conta</button>
+          <p class="auth-troca">Já tem conta? <a href="#" data-auth-link="login">Entrar</a></p>
+        </form>
+
+        <div id="authLogado" class="auth-logado" style="display:none;">
+          <div class="auth-avatar">🤍</div>
+          <h3 id="authNomeLogado">Olá!</h3>
+          <p id="authEmailLogado" style="color: var(--texto-mutado); margin-bottom: 20px;"></p>
+          <a href="doar.html" class="btn-primary btn-full">Fazer uma doação</a>
+          <button type="button" id="btnSair" class="btn-secondary btn-full" style="margin-top:12px;">Sair da conta</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-box">
+        <div class="footer-logo">Aposte<span> para o </span>Bem</div>
+        <p>Transformando solidariedade em impacto social real.</p>
+      </div>
+      <div class="footer-box">
+        <h4>Navegação</h4>
+        <a href="index.html">Home</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="acoes.html">Nossas Ações</a>
+        <a href="doar.html">Doar</a>
+      </div>
+      <div class="footer-box">
+        <h4>Contato</h4>
+        <p>📧 contato@apostebem.org.br</p>
+        <p>📱 (11) 99999-0000</p>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <p>© 2026 Aposte para o Bem · Projeto Acadêmico APS · Plataforma Solidária</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

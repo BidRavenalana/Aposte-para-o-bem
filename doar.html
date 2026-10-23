@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aposte para o Bem — Doar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Aposte<span> para o </span>Bem</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-item">Home</a></li>
+      <li><a href="sobre.html" class="nav-item">Sobre</a></li>
+      <li><a href="acoes.html" class="nav-item">Ações</a></li>
+      <li><a href="doar.html" class="nav-item">Doar</a></li>
+      <li><a href="contato.html" class="nav-item">Contato</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="login.html" class="nav-login" id="navAuth">Entrar</a>
+      <a href="doar.html" class="nav-donate">🤍 Doar agora</a>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <main class="content-wrapper">
+    <div class="section-header-aps">
+      <h2>Faça sua Doação</h2>
+      <p>Escolha um valor, diga qual missão quer apoiar e pronto. Toda contribuição faz diferença.</p>
+    </div>
+
+    <div class="bento-grid-doar">
+      <div class="box-card form-doacao-box">
+        <h3 id="tituloFormDoacao">Dados da doação</h3>
+        <div id="gateLogin" class="gate-login" style="display:none;">
+          <div class="gate-icone">🔒</div>
+          <h3>Entre para doar</h3>
+          <p>Para fazer uma doação e acompanhar o seu histórico, você precisa estar logado na sua conta.</p>
+          <a href="login.html" class="btn-primary btn-full">Entrar</a>
+          <a href="login.html#cadastro" class="btn-secondary btn-full" style="margin-top:12px;">Criar conta</a>
+        </div>
+        <form id="doacaoForm" style="display:none;">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="doacao-nome">Nome</label>
+              <input type="text" id="doacao-nome" placeholder="Seu nome" required />
+            </div>
+            <div class="form-group">
+              <label for="doacao-email">E-mail</label>
+              <input type="email" id="doacao-email" placeholder="nome@exemplo.com" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Valor da doação</label>
+            <div class="valores-rapidos">
+              <button type="button" class="valor-btn" data-valor="10">R$ 10</button>
+              <button type="button" class="valor-btn" data-valor="25">R$ 25</button>
+              <button type="button" class="valor-btn" data-valor="50">R$ 50</button>
+              <button type="button" class="valor-btn" data-valor="100">R$ 100</button>
+            </div>
+            <input type="number" id="doacao-valor" min="1" step="0.01" placeholder="Ou digite outro valor (R$)" required />
+          </div>
+
+          <div class="form-group">
+            <label for="doacao-tipo">Missão que deseja apoiar</label>
+            <select id="doacao-tipo" required>
+              <option value="Onde for mais necessário">Onde for mais necessário</option>
+              <option value="Alimentação">Alimentação</option>
+              <option value="Educação">Educação</option>
+              <option value="Acolhimento">Acolhimento</option>
+              <option value="Roupas">Roupas</option>
+            </select>
+          </div>
+
+          <div class="form-group" id="roupasCampo" style="display:none;">
+            <label for="doacao-roupas">Qual?</label>
+            <input type="text" id="doacao-roupas" placeholder="Descreva a causa" />
+          </div>
+
+          <div class="form-group">
+            <label for="doacao-msg">Mensagem (opcional)</label>
+            <textarea id="doacao-msg" placeholder="Deixe uma palavra de apoio..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary btn-full">Confirmar Doação 🤍</button>
+        </form>
+      </div>
+
+      <div class="box-card doar-info-box">
+        <h3>Para onde vai a sua doação?</h3>
+        <div class="doar-info-item"><span>🥘</span><div><strong>Alimentação</strong><p>Cestas básicas e nutrição para famílias em insegurança alimentar.</p></div></div>
+        <div class="doar-info-item"><span>📚</span><div><strong>Educação</strong><p>Kits escolares, reforço e oficinas para crianças e jovens.</p></div></div>
+        <div class="doar-info-item"><span>🏠</span><div><strong>Acolhimento</strong><p>Higiene e apoio a famílias desalojadas.</p></div></div>
+        <div class="doar-info-item"><span>🧥</span><div><strong>Roupas</strong><p>Agasalhos e roupas para famílias desalojadas.</p></div></div>
+      </div>
+
+      <div class="box-card historico-doacao-box full-width-box" id="historicoBox" style="display:none;">
+        <div class="registro-header">
+          <h3 id="tituloHistorico">Minhas Doações</h3>
+          <div class="total-doado" id="totalDoado">Total Acumulado: R$ 0,00</div>
+        </div>
+        <div id="listaDoacoes"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-box">
+        <div class="footer-logo">Aposte<span> para o </span>Bem</div>
+        <p>Transformando solidariedade em impacto social real.</p>
+      </div>
+      <div class="footer-box">
+        <h4>Navegação</h4>
+        <a href="index.html">Home</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="acoes.html">Nossas Ações</a>
+        <a href="doar.html">Doar</a>
+      </div>
+      <div class="footer-box">
+        <h4>Contato</h4>
+        <p>📧 contato@apostebem.org.br</p>
+        <p>📱 (11) 99999-0000</p>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <p>© 2026 Aposte para o Bem · Projeto Acadêmico APS · Plataforma Solidária</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
